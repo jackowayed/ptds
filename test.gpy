@@ -1,5 +1,9 @@
-def func(): do
-    if true: do
-       ok
-    end
+def func():
+if true
+ok
+end
+end
+for a in this_list:
+while true:
+end
 end
