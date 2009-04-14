@@ -1,0 +1,5 @@
+def func(): do
+    if true: do
+       ok
+    end
+end
