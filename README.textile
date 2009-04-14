@@ -1,0 +1,9 @@
+h1. Good Python (name probably changing)
+
+This rids Python of its whitespace-activeness. 
+
+It is *very much* a work in progrses.
+
+For now, you must end the line with "do" to get it to indent and have a line of "end" to get it to unindent. 
+
+Improvements (running straight from it without compiling first, better syntax) are coming shortly.
