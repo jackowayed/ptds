@@ -1,9 +1,14 @@
 def func():
-if true
-ok
+if true:
+print ok
 end
 end
+this_list = []
 for a in this_list:
-while true:
+while 1==0:
+print 'a'
 end
+end
+if True:
+print "b"
 end
