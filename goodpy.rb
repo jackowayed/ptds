@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'tempfile'
 def good_to_normal(filename)
   indent_level = 0
   good_code = File.readlines(filename).collect do |line|
@@ -36,4 +37,15 @@ end
 def indent(line, level)
   "  " * level + line
 end
-puts good_to_normal('test.gpy')
+if ARGV[0] == "--compile" || ARGV[0] == "-c"
+  puts good_to_normal(ARGV[-1])
+else
+  temp = Tempfile.new "goodpy-temp", File.dirname(__FILE__)
+  code = good_to_normal(ARGV[-1])
+  code.each do |line|
+    temp << line << "\n"
+  end
+  temp.close
+  %x[python #{ARGV[0..-2]*' '} #{temp.path}]
+end
+
