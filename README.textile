@@ -2,23 +2,17 @@ h1. Good Python (name probably changing)
 
 This rids Python of its whitespace-activeness. 
 
-It is *very much* a work in progrses.
+All keywords should be handled now.
 
-This basically works. To get it to indent, you have to either start a line with one of:
+h2. What it does
 
-* def
-* if
-* else
-* for
-* class
-* try
-* while
+Basically, it lets you use Ruby syntax for the nesting instead of indentation.
 
-or end the line with do. 
+Thus:
 
-To get it to unindent, you have to have a line just saying "end".
+It indents after lines starting with keywords that introduce blocks (def, class, if, try, etc.).
 
-There are a couple more keywords I need to handle, which are coming soon. 
+It unindents before lines starting with keywords that end blocks (elif, else, except, finally) and before a line saying "end".
 
 h2. Install
 
@@ -39,7 +33,7 @@ To simply run the file, run
 goodpy --flags --for --python code.gpy
 </code></pre>
 
-where code.gpy is the file. --flags --for --python will get passed to python. 
+where <code>code.gpy</code> is the file. <code>--flags --for --python</code> will get passed to python.
 
 To "compile" it to a python file, run
 
@@ -47,4 +41,4 @@ To "compile" it to a python file, run
 goodpy --compile code.gpy > code.py
 </code></pre>
 
-Where code.py is the destination file. You may also use -c instead of --compile. 
+Where <code>code.py</code> is the destination file. You may also use <code>-c</code> instead of <code>--compile</code>.
