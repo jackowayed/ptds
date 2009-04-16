@@ -39,7 +39,7 @@ To simply run the file, run
 goodpy --flags --for --python code.gpy
 </code></pre>
 
-where <pre><code>code.gpy</code></pre> is the file. --flags --for --python will get passed to python. 
+where code.gpy is the file. --flags --for --python will get passed to python. 
 
 To "compile" it to a python file, run
 
@@ -47,4 +47,4 @@ To "compile" it to a python file, run
 goodpy --compile code.gpy > code.py
 </code></pre>
 
-Where <pre><code>code.py</code></pre> is the destination file. You may also use -c instead of --compile. 
+Where code.py is the destination file. You may also use -c instead of --compile. 
