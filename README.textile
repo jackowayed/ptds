@@ -42,3 +42,8 @@ goodpy --compile code.gpy > code.py
 </code></pre>
 
 Where <code>code.py</code> is the destination file. You may also use <code>-c</code> instead of <code>--compile</code>.
+
+h2. License
+
+Copyright (c) 2009 Daniel Jackoway
+Released under the MIT License. See COPYING for details.

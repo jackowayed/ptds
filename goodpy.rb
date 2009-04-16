@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+
+# Copyright (c) 2009 Daniel Jackoway
+# Released under the MIT License. See COPYING for details
+
 require 'tempfile'
 class String
   def starts_with?(str)
