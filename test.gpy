@@ -12,3 +12,10 @@ end
 if True:
 print "b"
 end
+try:
+fail
+except:
+print 'saved'
+finally:
+print 'always happens'
+end
