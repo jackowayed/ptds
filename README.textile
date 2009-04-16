@@ -4,6 +4,47 @@ This rids Python of its whitespace-activeness.
 
 It is *very much* a work in progrses.
 
-For now, you must end the line with "do" to get it to indent and have a line of "end" to get it to unindent. 
+This basically works. To get it to indent, you have to either start a line with one of:
 
-Improvements (running straight from it without compiling first, better syntax) are coming shortly.
+* def
+* if
+* else
+* for
+* class
+* try
+* while
+
+or end the line with do. 
+
+To get it to unindent, you have to have a line just saying "end".
+
+There are a couple more keywords I need to handle, which are coming soon. 
+
+h2. Install
+
+Either clone the repo or just download the goodpy.rb file. Then, wherever goodpy.rb is, run:
+
+<pre><code>
+chmod +x goodpy.rb
+sudo cp goodpy.rb /usr/bin/goodpy
+</code></pre>
+
+Instead of /usr/bin/, you can put it in anywhere that is in your $PATH. 
+
+h2. Usage
+
+To simply run the file, run
+
+<pre><code>
+goodpy --flags --for --python code.gpy
+</code></pre>
+
+where <pre><code>code.gpy</code></pre> is the file. --flags --for --python will get passed to python. 
+
+To "compile" it to a python file, run
+
+<pre><code>
+goodpy --compile code.gpy > code.py
+</code></pre>
+
+Where <pre><code>code.py</code></pre> is the destination file. You may also use -c instead of --compile. 
