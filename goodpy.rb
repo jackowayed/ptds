@@ -1,5 +1,19 @@
 #!/usr/bin/env ruby
 require 'tempfile'
+class String
+  def starts_with?(str)
+    Regexp.new("^"+str) =~ self
+  end
+  # make sure you don't match variables with names like 'ifs'
+  def starts_with_keyword?(str)
+    self.stars_with?(str+':') || self.starts_with?(str+' ') || self == str
+  def starts_with_one_of?(arr)
+    arr.each do |str|
+      return true if self.starts_with? str
+    end
+    false
+  end
+end
 def good_to_normal(filename)
   indent_level = 0
   good_code = File.readlines(filename).collect do |line|
@@ -14,19 +28,16 @@ def indent_after?(line)
   starts_with_indenting_keyword? line || /do$/ =~ line
 end
 def starts_with_indenting_keyword?(line)
-  %w(def if else for class try while).each do |keyword|
-    return true if Regexp.new("^"+keyword) =~ line
-  end
-  false
+  line.starts_with_one_of? %w(def if else elif for class while try with except finally)
 end
 def unindent_before?(line)
-  "end" == line
+  line.starts_with_one_of? %w(end else elif except finally)
 end
 #need to comment out the dos and ends
 #comment mostly so that line #s stay the same
 #(deleting ends would delete a line)
 def comment_ruby_syntax(line)
-  if unindent_before? line
+  if line == "end"
     "#" + line
   elsif /do$/ =~ line
     line.insert /do$/ =~ line, "#"
