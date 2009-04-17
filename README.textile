@@ -47,3 +47,7 @@ h2. License
 
 Copyright (c) 2009 Daniel Jackoway
 Released under the MIT License. See COPYING for details.
+
+h2. Bugs & Suggestions
+
+Use the super-awesome new GitHub Issue Tracker! (Click the "Issue" tab above).
