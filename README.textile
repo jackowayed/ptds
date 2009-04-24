@@ -1,4 +1,4 @@
-h1. Good Python (name probably changing)
+h1. PTDS: Python That Doesn't Suck
 
 This rids Python of its whitespace-activeness. 
 
@@ -16,11 +16,11 @@ It unindents before lines starting with keywords that end blocks (elif, else, ex
 
 h2. Install
 
-Either clone the repo or just download the goodpy.rb file. Then, wherever goodpy.rb is, run:
+Either clone the repo or just download the ptds.rb file. Then, wherever ptds.rb is, run:
 
 <pre><code>
-chmod +x goodpy.rb
-sudo cp goodpy.rb /usr/bin/goodpy
+chmod +x ptds.rb
+sudo cp ptds.rb /usr/bin/ptds
 </code></pre>
 
 Instead of /usr/bin/, you can put it in anywhere that is in your $PATH. 
@@ -30,7 +30,7 @@ h2. Usage
 To simply run the file, run
 
 <pre><code>
-goodpy --flags --for --python code.gpy
+ptds --flags --for --python code.gpy
 </code></pre>
 
 where <code>code.gpy</code> is the file. <code>--flags --for --python</code> will get passed to python.
@@ -38,7 +38,7 @@ where <code>code.gpy</code> is the file. <code>--flags --for --python</code> wil
 To "compile" it to a python file, run
 
 <pre><code>
-goodpy --compile code.gpy > code.py
+ptds --compile code.gpy > code.py
 </code></pre>
 
 Where <code>code.py</code> is the destination file. You may also use <code>-c</code> instead of <code>--compile</code>.
